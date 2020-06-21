@@ -1,0 +1,7 @@
+在Windows上安装Tomcat的Windows服务
+1.根据Windows的位数(64/32)官网下载64-bit Windows zip (pgp, md5, sha1)或者32-bit Windows zip (pgp, md5, sha1)
+2.解压,如果8080端口被占用,修改server.xml文件
+3.运行startup.bat看是否有错误,检查网页是否能打开
+4.在该bin下按住Shift,鼠标右键有个在此处打开命令行窗口
+5.在命令行中输入 "service install tomcat" 安装
+6.输入 "service uninstall tomcat" 卸载

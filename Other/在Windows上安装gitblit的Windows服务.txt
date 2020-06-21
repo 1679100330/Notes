@@ -1,0 +1,13 @@
+在Windows上安装gitblit的Windows服务
+1.官网下载gitblit的Windows版本
+2.解压,在文件data/gitblit.properties下添加:
+	# 设定http协议的端口号
+	server.httpPort = 10101
+	# 设定服务器的IP地址
+	server.httpBindInterface = 安装的服务器IP
+	server.httpsBindInterface = localhost
+	server.shutdownPort = 8088	端口冲突的话,重新配置一个端口
+3.运行gitblit.bat看有无报错,网页是否可以打开
+4.修改installService.bat文件,系统64位则SET ARCH=amd64,32位则SET ARCH=x86
+5.运行installService.bat,在服务中看是否可以启动
+6.不能启动的话,打开gitblitw.exe,配置Java项,Java Virtual Machine的路径例如:C:\Program Files\Java\jdk1.8.0_144\jre\bin\server\jvm.dll

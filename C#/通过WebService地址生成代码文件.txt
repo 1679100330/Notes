@@ -1,0 +1,4 @@
+通过WebService地址生成代码文件
+在命令行窗口运行
+	C:\Program Files\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools>svcutil http://IP地址/TeamflowWS/TeamplateFacade.asmx?wsdl /language:C# /d:d:\TeamplateFacade
+然后在D盘下会生成配置文件和代码文件
