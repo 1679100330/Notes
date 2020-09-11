@@ -23,3 +23,9 @@
 > 2、运行tomcat的bin目录下的tomcat9w.exe，第四项勾选Use default
 >
 > 3、启动服务net start tomcat9，停止服务net stop tomcat9，注意：必须是通过管理员方式打开的命令行
+
+* 注意
+
+> 检测C:\Program Files\apache-tomcat-9.0.37目录的权限
+>
+> 这些组或用户名 ALL APPLICATION PACKAGES、SYSTEM、Administrators、Users都必须拥有完全控制的权限，不然会发生一些疑难问题
