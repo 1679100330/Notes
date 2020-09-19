@@ -98,7 +98,8 @@
 > rabbitmqctl reset
 >
 > rabbitmqctl join_cluster rabbit@rabbitmq-one
->
+> 注意：报错有可能是以下端口的防火墙没有打开
+> 4369,5672,15672,25672
 > rabbitmqctl start_app
 >
 > 然后浏览器http://localhost:15672/#/查看两台，在Nodes那里都相互有了
