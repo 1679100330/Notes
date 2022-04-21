@@ -6,3 +6,6 @@ Windows电脑自动登录设置 免去开机输密码的麻烦
 打开本地用户和组
 	计算机 右键 管理-->>计算机管理
 
+卸载Anaconda3打不开命名框
+	C:\Windows\System32\reg.exe DELETE "HKCU\Software\Microsoft\Command Processor" /v AutoRun /f
+	操作成功完成。
