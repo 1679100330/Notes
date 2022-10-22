@@ -1,0 +1,24 @@
+安装Python环境
+
+安装依赖
+yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make
+yum install libffi-devel -y
+yum install openldap-devel -y
+
+wget https://www.python.org/ftp/python/3.8.12/Python-3.8.12.tgz
+tar -zxvf Python-3.8.12.tgz
+cd Python-3.8.12/
+
+mkdir /root/local/python3
+./configure --prefix=/root/local/python3
+make && make install
+
+mkdir /root/bin
+ln -s /root/local/python3/bin/python3 /root/bin/python3
+
+参数解释：
+--prefix选项是配置安装的路径，若是不配置该选项，安装后可执行文件默认放在 /usr/local/bin，库文件默认放在 /usr/local/lib，配置文件默认放在 /usr/local/etc，其它的资源文件放在 /usr/local/share，比较凌乱.
+若是配置--prefix，如：./configure --prefix=/usr/local/python3.6能够把全部资源文件放在/usr/local/python3.6的路径中，不会杂乱.用了--prefix选项的另外一个好处是卸载软件或移植软件。当某个安装的软件再也不须要时，只须简单的删除该安装目录,就能够把软件卸载得干干净净；移植软件只需拷贝整个目录到另一个相同的操做系统机器便可.固然要卸载程序，也能够在原来的make目录下用一次make uninstall，但前提是make文件指定过uninstall.
+--enable-optimizations 是优化选项（LTO,PGO 等）加上这个 flag 编译后，性能有 10% 左右的优化,可是这会明显的增长编译时间,老久了.
+./configure命令执行完毕以后建立一个文件 Makefile, 供下面的make命令使用,执行make install以后就会把程序安装到咱们指定的文件夹中去
+安装python-ladp需要openldap-devel
