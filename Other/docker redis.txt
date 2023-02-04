@@ -1,0 +1,38 @@
+# 安装
+yum update
+yum install -y yum-utils device-mapper-persistent-data lvm2
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+yum install -y docker-ce
+docker -v
+
+# 启动
+systemctl start docker
+systemctl status docker
+systemctl stop docker
+systemctl restart docker
+# 设置开机启动服务
+systemctl enable docker
+
+# 镜像
+https://hub.docker.com/
+docker images
+docker search redis
+docker pull redis
+docker rmi IMAGEID
+
+# 容器
+docker run -itd --name myredis -p 6379:6379 redis --restart unless-stopped redis-server --appendonly yes
+	-i 保持一直运行
+	-t 给容器分配终端
+	-d 不进人容器
+# 查看正在运行的容器
+docker ps
+	-a 查看所有
+	
+# 连接
+redis-cli.exe -h 192.168.70.159 -p 6379
+
+# 开机启动
+vi /etc/rc.local
+追加执行的命令
+chmod +x /etc/rc.local
